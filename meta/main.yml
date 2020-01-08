@@ -1,0 +1,18 @@
+galaxy_info:
+  description: create deployment user
+  license: license (MIT)
+
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: Raspbian
+      versions:
+        - buster
+
+  galaxy_tags: []
+
+dependencies: []
+  
