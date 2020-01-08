@@ -1,0 +1,15 @@
+- name: add the user {{ user_name }}
+  user:
+    name: "{{ user_name }}"
+    groups: sudo
+    append: true
+    create_home: true
+    shell: /bin/bash
+    password: "{{ user_password | string | password_hash('sha512', 1000000 | random(seed=ansible_hostname)) }}"
+
+- name: configure passwordless sudo
+  copy:
+    dest: /etc/sudoers.d/{{ user_name }}
+    content: "{{ user_name }} ALL=(ALL) NOPASSWD:ALL"
+    mode: 0440
+  when: user_passwordless_sudo | bool

@@ -1,0 +1,3 @@
+user_name: deployment
+user_password: superSekret
+user_passwordless_sudo: true
