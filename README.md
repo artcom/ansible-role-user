@@ -4,7 +4,7 @@ Ansible role for configuring deployment user
 ## Role Variables
 Available variables are listed below, along with default values `(see defaults/main.yml)`:
 ```yaml
-user_name: deployment
+user_name: "{{ ansible_user }}"
 user_password: superSekret
 user_passwordless_sudo: true
 ```
