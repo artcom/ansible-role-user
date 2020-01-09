@@ -13,3 +13,16 @@
     content: "{{ user_name }} ALL=(ALL) NOPASSWD:ALL"
     mode: 0440
   when: user_passwordless_sudo | bool
+
+- name: Create public_keys list
+  set_fact:
+    public_keys_list: "{{ public_keys_list | default([]) + [item.value] }}"
+  with_dict: "{{ user_authorized_keys }}"
+  no_log: true
+
+- name: set ssh keys
+  authorized_key:
+    user: "{{ user_name }}"
+    key: "{{ public_keys_list | join('\n') }}"
+    exclusive: true
+  when: public_keys_list is defined

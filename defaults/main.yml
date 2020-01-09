@@ -1,3 +1,4 @@
 user_name: "{{ ansible_user }}"
 user_password: superSekret
 user_passwordless_sudo: true
+user_authorized_keys: {}
