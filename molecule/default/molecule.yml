@@ -12,6 +12,8 @@ platforms:
     box: ubuntu/xenial64
   - name: bionic-role-user
     box: ubuntu/bionic64
+  - name: buster-role-user
+    box: debian/buster64
 provisioner:
   name: ansible
   lint:

@@ -13,7 +13,9 @@ def test_new_user(host):
         'bionic': '$6$697372$SwS3xavBFqdkllucy7ck7FcI.y8bUWTaCgfQKN4RsiytLTZM'
         + 'MPeByop2y4dZNZHylOXhFDce3bvX9LQPdvZNR.',
         'xenial': '$6$679471$V3AhevTzc.0PS9TQqNB3nuCW8kuiuHreJN7/aX6R/7B8oKKw'
-        + 'yPicutfNh1oqoJnfMowhVUo6cUxgJVXkABe/u/'
+        + 'yPicutfNh1oqoJnfMowhVUo6cUxgJVXkABe/u/',
+        'buster': '$6$740947$T7pLD9KoJ5okRSuDPuYl/AODLdaty6nY4YZs4H0RysnDAwMX'
+        + 'xsykuG2tkOfDOa0rB1tqTAafQD3jVI1tkyB27.'
     }
 
     assert new_user.home == '/home/new_user', new_user.home

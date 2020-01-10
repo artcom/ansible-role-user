@@ -9,7 +9,7 @@ galaxy_info:
       versions:
         - xenial
         - bionic
-    - name: Raspbian
+    - name: Debian
       versions:
         - buster
 
