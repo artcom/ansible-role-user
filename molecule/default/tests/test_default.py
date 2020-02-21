@@ -10,12 +10,12 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_new_user(host):
     new_user = host.user('new_user')
     password_hash = {
-        'bionic': '$6$697372$SwS3xavBFqdkllucy7ck7FcI.y8bUWTaCgfQKN4RsiytLTZM'
-        + 'MPeByop2y4dZNZHylOXhFDce3bvX9LQPdvZNR.',
-        'xenial': '$6$679471$V3AhevTzc.0PS9TQqNB3nuCW8kuiuHreJN7/aX6R/7B8oKKw'
-        + 'yPicutfNh1oqoJnfMowhVUo6cUxgJVXkABe/u/',
-        'buster': '$6$740947$T7pLD9KoJ5okRSuDPuYl/AODLdaty6nY4YZs4H0RysnDAwMX'
-        + 'xsykuG2tkOfDOa0rB1tqTAafQD3jVI1tkyB27.'
+        'bionic': '$6$178817$MUZ72RFlQvoP.LPfM4WFNlf85uNpHsH8tnBlmTcwmvSS.Tc5'
+        + 'CguHvAO.QMixRt48CP/hv1g4mNwdhnVzo8PjO.',
+        'xenial': '$6$80301$4VrrhOBcWGHAK9XE1jMYk5y5s0i/YPJgwQJiZoipUAA5bZ.LO'
+        + 'CG.YOgrGISQYyE7NQHdiGaPEKXNFy5Gn9gvP/',
+        'buster': '$6$296379$6HIfEwxwNIvmxSROyrL2.q644szD9bfckVg2kBRWiSWzM0kL'
+        + 'Hw08hJUDKgnaya5WOHgWGdCooa.6soNs8ilwd1'
     }
 
     assert new_user.home == '/home/new_user', new_user.home

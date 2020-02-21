@@ -1,12 +1,13 @@
 ---
 - name: Converge
   hosts: all
-  become: yes
+  become: true
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    user_name: new_user
-    user_authorized_keys:
-      new_user: ssh-rsa NEWUSERPUBKEY== new_user
-      admin_user: ssh-rsa ADMINUSERPUBKEY== admin_user
   roles:
     - role: user
+      vars:
+        user_name: new_user
+        user_authorized_keys:
+          new_user: ssh-rsa NEWUSERPUBKEY== new_user
+          admin_user: ssh-rsa ADMINUSERPUBKEY== admin_user
