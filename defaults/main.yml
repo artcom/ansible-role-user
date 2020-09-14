@@ -1,5 +1,4 @@
-user_name: "{{ ansible_user }}"
-user_password: superSekret
+user_name: null
+user_password: null
 user_passwordless_sudo: true
-user_authorized_keys:
-  operator: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+user_authorized_keys: {}
