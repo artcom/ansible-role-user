@@ -4,8 +4,12 @@
   become: true
   vars:
     ansible_python_interpreter: /usr/bin/python3
-  roles:
-    - role: user
+    ansible_user: root
+
+  tasks:
+    - name: configure user
+      ansible.builtin.include_role:
+        name: user
       vars:
         user_name: new_user
         user_password: superSekret

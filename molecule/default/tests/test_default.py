@@ -1,21 +1,10 @@
-import os
-
-import testinfra.utils.ansible_runner
-
-testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
-    os.environ['MOLECULE_INVENTORY_FILE']
-).get_hosts('all')
-
-
 def test_new_user(host):
     new_user = host.user('new_user')
     password_hash = {
-        'bionic': '$6$178817$MUZ72RFlQvoP.LPfM4WFNlf85uNpHsH8tnBlmTcwmvSS.Tc5'
-        + 'CguHvAO.QMixRt48CP/hv1g4mNwdhnVzo8PjO.',
-        'xenial': '$6$80301$4VrrhOBcWGHAK9XE1jMYk5y5s0i/YPJgwQJiZoipUAA5bZ.LO'
-        + 'CG.YOgrGISQYyE7NQHdiGaPEKXNFy5Gn9gvP/',
-        'buster': '$6$296379$6HIfEwxwNIvmxSROyrL2.q644szD9bfckVg2kBRWiSWzM0kL'
-        + 'Hw08hJUDKgnaya5WOHgWGdCooa.6soNs8ilwd1'
+        'focal': '$6$933933$3/860wLZBSxhXgXkVaYu4myqIWVayD8ZpBU1L0/A/QS3LKERM'
+                 '5gINeYu/q8Z9o4v1dqqGuQUuLsIvDQTsw4hG1',
+        'buster': '$6$411421$d6Cd6W.l.LPibI2.oM7MQJ3rdS4VgpKmCGrHv/t5XIwVHoTM'
+                  'G6LAe2/AnQBnWOfiY3IdJNs1JkLCWAy2QS1bN1'
     }
 
     assert new_user.home == '/home/new_user', new_user.home

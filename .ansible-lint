@@ -1,0 +1,8 @@
+exclude_paths:
+  - venv/
+
+warn_list:
+  - load-failure
+
+skip_list:
+  - role-name

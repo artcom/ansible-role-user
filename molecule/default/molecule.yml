@@ -4,11 +4,9 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: xenial
-    image: ubuntu:xenial
-  - name: bionic
-    image: ubuntu:bionic
-  - name: buster
+  - name: user-focal
+    image: ubuntu:focal
+  - name: user-buster
     image: debian:buster
 provisioner:
   name: ansible

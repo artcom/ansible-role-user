@@ -1,0 +1,30 @@
+default:
+  image: gitlab.artcom.de:5005/artcom/container-images/dind-gitlab:v1.1.0
+  services:
+    - docker:20.10.6-dind
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - ssh-keyscan -H gitlab.artcom.de >> ~/.ssh/known_hosts
+  - python3 -m venv venv
+  - source venv/bin/activate
+
+test:
+  stage: test
+  script:
+    - python -V
+    - pip install -U pip # Upgrade pip to not require the Rust toolchain to build Cryptography
+    - export CRYPTOGRAPHY_DONT_BUILD_RUST=1 # Do not build with Rust
+    - pip install wheel
+    - pip install -U setuptools
+    - pip install -r requirements.txt
+    - molecule test
