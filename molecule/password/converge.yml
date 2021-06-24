@@ -12,6 +12,7 @@
         name: user
       vars:
         user_name: new_user
+        user_password: superSekret
         user_authorized_keys:
           new_user: ssh-rsa NEWUSERPUBKEY== new_user
           admin_user: ssh-rsa ADMINUSERPUBKEY== admin_user

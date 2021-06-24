@@ -6,6 +6,16 @@
     create_home: true
     shell: /bin/bash
     password: "{{ user_password | string | password_hash('sha512', 1000000 | random(seed=ansible_hostname)) }}"
+  when: user_password is not none
+
+- name: add the user {{ user_name }} without a password
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    groups: sudo
+    append: true
+    create_home: true
+    shell: /bin/bash
+  when: user_password is none
 
 - name: configure passwordless sudo
   ansible.builtin.copy:
