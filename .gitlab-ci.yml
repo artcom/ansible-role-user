@@ -27,4 +27,4 @@ test:
     - pip install wheel
     - pip install -U setuptools
     - pip install -r requirements.txt
-    - molecule test
+    - molecule test --all
