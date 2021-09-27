@@ -15,7 +15,7 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - src: git@github.com:artcom/ansible-role-check-required-variables.git
+  - src: https://github.com/artcom/ansible-role-check-required-variables.git
     scm: git
     version: "v1.0.0"
     name: check-required-variables
