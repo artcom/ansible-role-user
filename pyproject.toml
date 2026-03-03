@@ -9,6 +9,7 @@ dependencies = ["ansible>=13.4.0", "passlib>=1.7.4"]
 [dependency-groups]
 dev = [
     "ansible-lint>=26.2.0",
+    "invoke>=2.2.1",
     "molecule>=26.2.0",
     "molecule-docker>=2.1.0",
     "pytest-testinfra>=10.2.2",

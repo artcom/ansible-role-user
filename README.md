@@ -38,3 +38,11 @@ The user is created with given password, home folder and bash shell. User is add
 uv sync --locked
 uv run molecule test
 ```
+
+## Invoke tasks
+
+```bash
+uv run invoke --list
+uv run invoke bump --patch
+uv run invoke format
+```
