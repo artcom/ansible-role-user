@@ -1,6 +1,6 @@
 [project]
 name = "user"
-version = "1.2.5"
+version = "1.2.6"
 description = "Ansible role for configuring a user"
 readme = "README.md"
 requires-python = ">=3.14"
