@@ -43,6 +43,6 @@ uv run molecule test
 
 ```bash
 uv run invoke --list
-uv run invoke bump --patch
+uv run invoke bump --part patch
 uv run invoke format
 ```
