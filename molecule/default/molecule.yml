@@ -4,16 +4,11 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: user-focal
-    image: ubuntu:focal
-  - name: user-buster
-    image: debian:buster
+  - name: user-noble
+    image: ubuntu:noble
+  - name: user-trixie
+    image: debian:trixie
 provisioner:
   name: ansible
 verifier:
   name: testinfra
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
-  flake8
